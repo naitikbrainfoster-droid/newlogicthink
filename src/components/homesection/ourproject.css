@@ -1,0 +1,130 @@
+/* ================= CINEMATIC LEFT ENTRY ================= */
+
+.project-card {
+  opacity: 0;
+  transform-origin: center;
+  transform:
+    translateX(-12%)
+    translateY(40px)
+    rotate(0deg)
+    translateZ(0);
+  transition:
+    opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* RIGHT cards – mirror movement */
+.project-right {
+  transform:
+    translateX(122%)
+    translateY(140px)
+    rotate(50deg)
+    translateZ(0);
+}
+
+/* LEFT cards – stronger cinematic feel */
+.project-left {
+  transform:
+    translateX(-119%)
+    translateY(60px)
+    rotate(50deg)
+    translateZ(0);
+}
+
+/* when section is visible */
+.projects-visible .project-card {
+  opacity: 1;
+  transform:
+    translateX(0)
+    translateY(0)
+    rotate(0deg)
+    translateZ(0);
+}
+
+/* ================= TABLET RESPONSIVE ================= */
+@media (max-width: 1024px) {
+
+  .projects-visible .project-card {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  /* grid single column */
+  .projects-visible .grid.lg\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* card image height */
+  .project-card img {
+    height: 280px;
+  }
+
+  /* text spacing */
+  .project-card h3 {
+    font-size: 17px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 640px) {
+
+  section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .projects-visible .project-card {
+    transform: translateX(0) translateY(0) rotate(0deg);
+  }
+
+  /* cards spacing */
+  .project-card {
+    border-radius: 22px;
+  }
+
+  .project-card img {
+    height: 240px;
+  }
+
+  /* content padding */
+  .project-card .absolute.inset-0.p-6 {
+    padding: 18px;
+  }
+
+  /* text size */
+  .project-card h3 {
+    font-size: 16px;
+  }
+
+  .project-card p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* tag */
+  .project-card span {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+}
+/* ================= FIX: MOBILE & TABLET BLANK ISSUE ================= */
+@media (max-width: 1024px) {
+
+  /* cards visible by default */
+  .project-card {
+    opacity: 1 !important;
+    transform: translateX(0) translateY(0) rotate(0deg) !important;
+  }
+
+  /* disable cinematic entry on small screens */
+  .project-left,
+  .project-right {
+    transform: translateX(0) translateY(0) rotate(0deg) !important;
+  }
+
+}

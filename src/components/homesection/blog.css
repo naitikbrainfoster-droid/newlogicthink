@@ -1,0 +1,45 @@
+/* ================= INSIGHTS SCROLL ANIMATION ================= */
+
+.insights-left,
+.insights-right,
+.insights-fade {
+  opacity: 0;
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+/* entry positions */
+.insights-left {
+  transform: translateX(-80px);
+}
+
+.insights-right {
+  transform: translateX(80px);
+}
+
+.insights-fade {
+  transform: translateY(40px);
+}
+
+/* active */
+.insights-visible .insights-left,
+.insights-visible .insights-right,
+.insights-visible .insights-fade {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* ================= FIX: INSIGHTS SECTION BLANK (MOBILE & TABLET) ================= */
+@media (max-width: 1024px) {
+
+  /* disable all entry animations */
+  .insights-left,
+  .insights-right,
+  .insights-fade {
+    opacity: 1 !important;
+    transform: translateX(0) translateY(0) !important;
+  }
+
+}

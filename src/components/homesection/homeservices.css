@@ -1,0 +1,25 @@
+@keyframes rotateLeftToRight {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateRightToLeft {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.rotate-ltr {
+  animation: rotateLeftToRight 60s linear infinite;
+}
+
+.rotate-rtl {
+  animation: rotateRightToLeft 60s linear infinite;
+}

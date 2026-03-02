@@ -1,0 +1,13 @@
+.rotate-360 {
+  animation: spin360 50s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes spin360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
